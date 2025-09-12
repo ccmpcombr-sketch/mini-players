@@ -1,1 +1,36 @@
-{}
+{
+  "filmes": [
+    {
+      "título": "",
+      "desc": "",
+      "url": "",
+      "curtidas": 0,
+      "visualizações": 0,
+      "lista de reprodução oculta": []
+    },
+    {
+      "título": "",
+      "desc": "",
+      "url": "",
+      "curtidas": 0,
+      "visualizações": 0,
+      "lista de reprodução oculta": []
+    },
+    {
+      "título": "",
+      "desc": "",
+      "url": "",
+      "curtidas": 0,
+      "visualizações": 0,
+      "lista de reprodução oculta": []
+    },
+    {
+      "título": "",
+      "desc": "",
+      "url": "",
+      "curtidas": 0,
+      "visualizações": 0,
+      "lista de reprodução oculta": []
+    }
+  ]
+}
