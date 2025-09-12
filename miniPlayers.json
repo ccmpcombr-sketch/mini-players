@@ -1,51 +1,50 @@
 {
   "filmes": [
     {
-      "title": "teste 01",
-      "desc": "teste01",
-      "url": "",
-      "likes": 0,
-      "views": 0,
-      "hiddenPlaylist": [
+      "título": "teste01",
+      "desc": "teste02",
+      "curtidas": 0,
+      "visualizações": 0,
+      "lista de reprodução oculta": [
         {
-          "title": "Normal 1",
+          "título": "Normal 1",
           "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
-          "type": "normal"
+          "tipo": "normal"
         },
         {
-          "title": "Anúncio 1",
+          "título": "Anúncio 1",
           "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
-          "type": "ad"
+          "tipo": "anúncio"
         },
         {
-          "title": "Normal 2",
+          "título": "Normal 2",
           "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
-          "type": "normal"
+          "tipo": "normal"
         },
         {
-          "title": "Anúncio 2",
+          "título": "Anúncio 2",
           "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
-          "type": "ad"
+          "tipo": "anúncio"
         },
         {
-          "title": "Normal 3",
+          "título": "Normal 3",
           "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
-          "type": "normal"
+          "tipo": "normal"
         },
         {
-          "title": "Anúncio 3",
+          "título": "Anúncio 3",
           "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
-          "type": "ad"
+          "tipo": "anúncio"
         },
         {
-          "title": "Normal 4",
+          "título": "Normal 4",
           "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
-          "type": "normal"
+          "tipo": "normal"
         },
         {
-          "title": "Anúncio 4",
+          "título": "Anúncio 4",
           "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
-          "type": "ad"
+          "tipo": "anúncio"
         }
       ]
     }
