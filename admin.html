@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postagem Automática de Mini Player</title>
+<style>
+body { font-family: Arial; padding: 20px; background:#001f3f; color:#fff; }
+input, select { width: 100%; padding: 5px; margin:5px 0; }
+button { padding: 8px 12px; margin-top: 10px; cursor:pointer; }
+.playlist-item { margin-bottom:5px; }
+hr { border:1px solid #555; margin:20px 0; }
+pre { background:#000; padding:10px; max-height:400px; overflow:auto; }
+</style>
+</head>
+<body>
+<h2>Postar Mini Player</h2>
+
+<label>Categoria:</label>
+<select id="category">
+  <option value="filmes">Filmes</option>
+  <option value="series">Séries</option>
+  <option value="documentarios">Documentários</option>
+  <option value="seriados">Seriados</option>
+</select>
+
+<label>Título do Mini Player:</label>
+<input type="text" id="title">
+
+<label>Descrição:</label>
+<input type="text" id="desc">
+
+<label>Vídeo principal:</label>
+<input type="text" id="mainVideo" placeholder="URL do vídeo principal">
+
+<h3>Playlist - Vídeos Normais</h3>
+<div id="normalVideos">
+  <input type="text" class="playlist-item" placeholder="URL vídeo normal 1">
+  <input type="text" class="playlist-item" placeholder="URL vídeo normal 2">
+  <input type="text" class="playlist-item" placeholder="URL vídeo normal 3">
+  <input type="text" class="playlist-item" placeholder="URL vídeo normal 4">
+</div>
+
+<h3>Playlist - Anúncios</h3>
+<div id="adVideos">
+  <input type="text" class="playlist-item" placeholder="URL anúncio 1">
+  <input type="text" class="playlist-item" placeholder="URL anúncio 2">
+  <input type="text" class="playlist-item" placeholder="URL anúncio 3">
+  <input type="text" class="playlist-item" placeholder="URL anúncio 4">
+</div>
+
+<button onclick="postMiniPlayer()">Salvar Mini Player</button>
+<button onclick="downloadJSON()">Gerar JSON local</button>
+<button onclick="updateGitHub()">Atualizar GitHub Pages</button>
+<hr>
+<h3>Mini Players Salvos:</h3>
+<pre id="output"></pre>
+
+<script>
+// Configurações do GitHub
+const GITHUB_USER = "ccmpcombr-sketch"; // substitua pelo seu usuário
+const REPO = "mini-players";           // nome do repositório
+const FILE_PATH = "miniPlayers.json";
+const BRANCH = "main";
+const TOKEN = "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"; // substitua pelo seu token pessoal
+
+let allData = JSON.parse(localStorage.getItem('miniPlayers')) || {};
+
+function postMiniPlayer() {
+  const category = document.getElementById('category').value;
+  const title = document.getElementById('title').value;
+  const desc = document.getElementById('desc').value;
+  const mainVideo = document.getElementById('mainVideo').value;
+
+  const normalVideos = Array.from(document.querySelectorAll('#normalVideos .playlist-item')).map(v=>v.value);
+  const adVideos = Array.from(document.querySelectorAll('#adVideos .playlist-item')).map(v=>v.value);
+
+  let hiddenPlaylist = [];
+  for(let i=0;i<4;i++){
+    if(normalVideos[i]) hiddenPlaylist.push({title:`Normal ${i+1}`, url: normalVideos[i], type:"normal"});
+    if(adVideos[i]) hiddenPlaylist.push({title:`Anúncio ${i+1}`, url: adVideos[i], type:"ad"});
+  }
+
+  const miniPlayer = { title, desc, url: mainVideo, likes:0, views:0, hiddenPlaylist };
+
+  if(!allData[category]) allData[category] = [];
+  allData[category].push(miniPlayer);
+  localStorage.setItem('miniPlayers', JSON.stringify(allData));
+
+  displayMiniPlayers();
+}
+
+function displayMiniPlayers() {
+  document.getElementById('output').textContent = JSON.stringify(allData, null, 2);
+}
+
+// Baixar JSON localmente
+function downloadJSON() {
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allData, null, 2));
+  const dlAnchor = document.createElement('a');
+  dlAnchor.setAttribute("href", dataStr);
+  dlAnchor.setAttribute("download", "miniPlayers.json");
+  document.body.appendChild(dlAnchor);
+  dlAnchor.click();
+  dlAnchor.remove();
+}
+
+// Atualizar JSON diretamente no GitHub
+async function updateGitHub() {
+  try {
+    // Pega conteúdo atual do arquivo (precisa do SHA)
+    const getRes = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO}/contents/${FILE_PATH}`);
+    const getData = await getRes.json();
+    const sha = getData.sha;
+
+    const content = btoa(JSON.stringify(allData, null, 2));
+
+    const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO}/contents/${FILE_PATH}`, {
+      method: "PUT",
+      headers: {
+        "Authorization": `token ${TOKEN}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: "Atualizando miniPlayers.json via admin.html",
+        content: content,
+        branch: BRANCH,
+        sha: sha
+      })
+    });
+
+    if(res.ok) alert("JSON atualizado no GitHub com sucesso!");
+    else alert("Erro ao atualizar GitHub: " + res.statusText);
+
+  } catch(err) {
+    console.error(err);
+    alert("Erro ao atualizar GitHub: veja o console");
+  }
+}
+
+displayMiniPlayers();
+</script>
+</body>
+</html>
