@@ -1,12 +1,6 @@
 {
   "filmes": [
-    {
-      "title": "test",
-      "desc": "test",
-      "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
-      "likes": 0,
-      "views": 0,
-      "hiddenPlaylist": [
+   
         {
           "title": "Normal 1",
           "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
