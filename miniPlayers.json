@@ -1,39 +1,7 @@
 {
-  "amor": {
-    "sexo": {
-      "cama": [
-        {
-          "título": "amor e sexo",
-          "desc": "amor e sexo",
-          "curtidas": 0,
-          "visualizações": 0,
-          "lista de reprodução oculta": [
-            {
-              "título": "Normal 1",
-              "url": "https://ia801008.us.archive.org/6/items/a-hora-do-povo/A%20HORA%20DO%20POVO.mp4",
-              "tipo": "normal"
-            },
-            {
-              "título": "Anúncio 1",
-              "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
-              "tipo": "anuncio",
-              "pulavel": true,
-              "link": ""
-            },
-            {
-              "título": "Normal 2",
-              "url": "https://ia601300.us.archive.org/8/items/neguinho-dos-teclados-vem-de-re-remix-720-p-hd/Neguinho%20Dos%20Teclados%20Vem%20De%20R%C3%A9%20Remix%28720P_HD%29.mp4",
-              "tipo": "normal"
-            },
-            {
-              "título": "Anúncio 2",
-              "url": "https://ia801005.us.archive.org/9/items/pulavel-01/PULAVEL%2001.mp4",
-              "tipo": "anuncio",
-              "pulavel": false,
-              "link": ""
-            }
-          ]
-        },
+  "teste": {
+    "novo": {
+      "novato": [
         {
           "título": "teste",
           "desc": "testando",
@@ -66,10 +34,7 @@
             }
           ]
         }
-      ],
-      "teste": []
-    },
-    "teste": {}
-  },
-  "teste": {}
+      ]
+    }
+  }
 }
