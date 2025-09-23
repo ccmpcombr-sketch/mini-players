@@ -1,11 +1,10 @@
 {
-  "Filme": {
+  "Filmes": {
     "Ação": {
-      "_cover": "https://dn721901.ca.archive.org/0/items/capturar_202509/Capturar.PNG",
       "Lançamentos": [
         {
-          "título": "tsts",
-          "desc": "ttssttss",
+          "título": "Play",
+          "desc": "Teste",
           "curtidas": 0,
           "visualizações": 0,
           "lista de reprodução oculta": [
