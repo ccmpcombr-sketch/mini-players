@@ -4,8 +4,8 @@
       "_cover": "https://dn721901.ca.archive.org/0/items/capturar_202509/Capturar.PNG",
       "Lançamentos": [
         {
-          "título": "test",
-          "desc": "tests",
+          "título": "tsts",
+          "desc": "ttssttss",
           "curtidas": 0,
           "visualizações": 0,
           "lista de reprodução oculta": [
@@ -16,7 +16,7 @@
             },
             {
               "título": "Anúncio 1",
-              "url": "https://ia801005.us.archive.org/9/items/pulavel-01/PULAVEL%2001.mp4",
+              "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
               "tipo": "anuncio",
               "pulavel": false,
               "link": "https://www.facebook.com/AdrianoBarrosOficial"
@@ -28,7 +28,7 @@
             },
             {
               "título": "Anúncio 2",
-              "url": "https://ia800900.us.archive.org/12/items/tv-ccmp-vinheta/TV%20CCMP%20VINHETA.mp4",
+              "url": "https://ia801005.us.archive.org/9/items/pulavel-01/PULAVEL%2001.mp4",
               "tipo": "anuncio",
               "pulavel": true,
               "link": "https://www.facebook.com/AdrianoBarrosOficial"
