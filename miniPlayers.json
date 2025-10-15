@@ -1,5 +1,6 @@
 {
   "título": "Normal 1",
   "tipo": "normal",
-  "miniPlayerUrl": "https://teste-app.netlify.app//mini-player.html?url=https://drive.google.com/file/d/1C1AwhHZ2ieeS4I-46A0XcuAC1s_WcXYF/view?usp=sharing"
+  "miniPlayerUrl": "https://teste-app.netlify.app//mini-player.html"
 }
+
